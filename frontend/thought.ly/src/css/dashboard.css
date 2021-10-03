@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  color: white;
+  box-sizing: border-box;
+}
+.font-heading {
+  font-family: monospace, 'Helvetica Neue', sans-serif;
+  font-size: 40px;
+}
+
+.dfr {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.nav {
+  padding: 0px 100px;
+  align-items: center;
+  height: 120px;
+}
+
+.w40 {
+  width: 40;
+}
+.menu {
+  flex-direction: row;
+  display: flex;
+  justify-content: space-between;
+}
+.menu div {
+  padding: 12px;
+  margin: 0px 30px;
+}
+.menu button {
+  padding: 10px 20px;
+  border: 0px solid #000;
+  font-family: sans-serif;
+  font-weight: bold;
+  color: blue;
+  border-radius: 12px;
+}
