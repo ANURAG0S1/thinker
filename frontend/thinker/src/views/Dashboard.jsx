@@ -1,5 +1,6 @@
 import React from 'react'
 import './../css/dashboard.css'
+import video from './../dashboard.mp4'
 
 function Dashboard() {
     return (
@@ -23,7 +24,7 @@ function Dashboard() {
 
             </div>
 
-            <section style={{ alignItems: "center", display: "flex", fontFamily: "poppins", justifyContent: "center", textAlign: "center", marginTop: "50px" }}>
+            <section style={{ height: "calc(100vh - 300px)", alignItems: "center", display: "flex", fontFamily: "poppins", flexDirection: "column", justifyContent: "center", textAlign: "center", marginTop: "50px", paddingBottom: "20%" }}>
                 <div>
                     <h1 style={{
                         fontSize: "32px",
@@ -38,6 +39,17 @@ function Dashboard() {
                     </h3>
                     <button className="button" style={{ marginTop: "30px", fontWeight: "bolder" }}>Join Us</button>
                 </div>
+                <div style={{ width: "60vw", position: 'absolute', bottom: '0', overflow: "hidden" }}>
+
+                    <video className='main-vid' style={{
+                        width: "100%", bottom: "-40px",
+                        transform: " scale(1) translateY(30%)"
+                    }} loop autoplay="true" muted src={video} type="video/mp4">  </video>
+
+                </div>
+            </section>
+            <section style={{ height: "calc(100vh - 300px)", alignItems: "center" }}>
+
             </section>
         </>
     )
