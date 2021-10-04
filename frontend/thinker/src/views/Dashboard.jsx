@@ -39,7 +39,7 @@ function Dashboard() {
                     </h3>
                     <button className="button" style={{ marginTop: "30px", fontWeight: "bolder" }}>Join Us</button>
                 </div>
-                <div style={{ width: "60vw", position: 'absolute', bottom: '0', overflow: "hidden" }}>
+                <div style={{ width: "60vw", position: 'absolute', bottom: '0', }}>
 
                     <video className='main-vid' style={{
                         width: "100%", bottom: "-40px",
