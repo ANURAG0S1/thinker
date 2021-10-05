@@ -1,10 +1,10 @@
-import Dashboard from './views/Dashboard';
 import './App.css';
+import Routerx from './views/Router';
 
 function App() {
   return (
     <div className='App'>
-      <Dashboard />
+      <Routerx />
     </div>
   );
 }

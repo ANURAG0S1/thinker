@@ -6,9 +6,13 @@
 }
 .font-heading {
   font-family: monospace, 'Helvetica Neue', sans-serif;
+}
+.s40 {
   font-size: 40px;
 }
-
+.simple-heading {
+  font-family: montserrat, poppins;
+}
 .dfr {
   display: flex;
   flex-direction: row;
@@ -19,7 +23,16 @@
   align-items: center;
   height: 100px;
 }
-
+.w100 {
+  width: 100%;
+}
+.center {
+  text-align: center;
+}
+p {
+  font-family: montserrat;
+  font-size: 14px;
+}
 .w40 {
   width: 40;
 }
@@ -30,12 +43,16 @@
 }
 .menu div {
   padding: 12px;
+  cursor: pointer;
   margin: 0px 20px;
 }
 .main-vid {
   mix-blend-mode: lighten;
   filter: hue-rotate(14deg) saturate(3.5);
   background-blend-mode: overlay;
+}
+.mt40 {
+  margin-top: 40px;
 }
 .button {
   margin-left: 30px;
@@ -45,4 +62,26 @@
   font-weight: bold;
   color: blue;
   border-radius: 12px;
+}
+
+.r20 {
+  border-radius: 20px;
+}
+
+.dfr div {
+  padding: 20px;
+}
+
+.aic {
+  align-items: center;
+}
+
+img.r20::after {
+  position: absolute;
+  left: 10px;
+  top: 40px;
+  content: '';
+  height: 30px;
+  width: 30px;
+  background: #000;
 }

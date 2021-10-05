@@ -1,30 +1,25 @@
 import React from 'react'
 import './../css/dashboard.css'
-import video from './../dashboard.mp4'
+import video from './../assets/vid/dashboard.mp4'
+import fimg from './../assets/img/idea-1.jpeg'
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+} from "react-router-dom";
+import Signup from './Signup';
+import Login from './Login';
+import Homefeed from './Homefeed'
+
 
 function Dashboard() {
     return (
         <>
 
-            <div className="nav dfr">
-
-                <div className="font-heading">
-                    Thinker
-                </div>
-                <div className="menu w40">
-                    <div className="Home">home
-                    </div>
-                    <div className="about">about</div>
-                    <div id="how">
-                        How it works
-                    </div>
-                    <button className="button">Sign Up / Log In</button>
-                </div>
 
 
-            </div>
-
-            <section style={{ height: "calc(100vh - 300px)", alignItems: "center", display: "flex", fontFamily: "poppins", flexDirection: "column", justifyContent: "center", textAlign: "center", marginTop: "50px", paddingBottom: "20%" }}>
+            <section style={{ height: "calc(100vh - 100px)", alignItems: "center", display: "flex", fontFamily: "poppins", flexDirection: "column", justifyContent: "center", textAlign: "center", marginTop: "8%", paddingBottom: "20%" }}>
                 <div>
                     <h1 style={{
                         fontSize: "32px",
@@ -48,11 +43,61 @@ function Dashboard() {
 
                 </div>
             </section>
-            <section style={{ height: "calc(100vh - 300px)", alignItems: "center" }}>
+
+
+            <section style={{ padding: "20px 40px" }}>
+                <h1 className="center s40  w100 simple-heading ">
+                    What we do ?
+                </h1>
+                <div className="w100 mt40">
+                    <div className="dfr ">
+                        <div>
+                            <img className="r20 p40" src={fimg} alt="idea" />
+                        </div>
+                        <div style={{ paddingLeft: "100px", paddingTop: "20px" }}>
+                            <h3>
+                                We help in bulding ideal products based on your reviews and opinions
+                            </h3>
+                            <br />
+                            <p>
+                                We share you valuable opinions  to our collaborative autorities which do compile and interpret your data to calculate and guide their upcoming products. Don't worry about your data. We share your data anonymously as so to protect your privacy and personal data. we also ask you to not to share your personal data in your opinions and ideas.
+                                <br />
+                                <br />
+                                your opinions guide the upcoming products and services to better themselves to give you a better experience. so in other terms you are making your life better by sharing your views.
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div className="w100 mt40">
+                    <div className="dfr ">
+
+                        <div style={{ paddingTop: "20px" }}>
+                            <h3>
+                                We help in bulding ideal products based on your reviews and opinions
+                            </h3>
+                            <br />
+                            <p>
+                                We share you valuable opinions  to our collaborative autorities which do compile and interpret your data to calculate and guide their upcoming products. Don't worry about your data. We share your data anonymously as so to protect your privacy and personal data. we also ask you to not to share your personal data in your opinions and ideas.
+                                <br />
+                                <br />
+                                your opinions guide the upcoming products and services to better themselves to give you a better experience. so in other terms you are making your life better by sharing your views.
+
+                            </p>
+                        </div>
+                        <div style={{ paddingLeft: "100px" }}>
+                            <img className="r20 p40" src={fimg} alt="idea" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
 
             </section>
+
+
         </>
     )
 }
 
-export default Dashboard
+export default Dashboard;
