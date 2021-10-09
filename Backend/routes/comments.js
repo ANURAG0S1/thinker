@@ -8,11 +8,11 @@ route.post('/:id', async (req, res) => {
   try {
     var requestContent = req.body;
     var lstcmt = await post.find({ _id: req.params.id });
-    var latestcmnts = lstcmt[0].postComments.Comments;
+    var latestcmnts = lstcmt[0].Comments.Comments;
 
     var poste = await post.findByIdAndUpdate(req.params.id, {
       ...this.post,
-      postComments: {
+      Comments: {
         Comments: [...latestcmnts, requestContent],
       },
     });

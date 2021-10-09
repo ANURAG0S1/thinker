@@ -1,13 +1,14 @@
 const mongoose = require('mongoose');
 
 const postSchema = new mongoose.Schema({
-  name: String,
+  username: String,
   date: { default: Date.now(), type: Date },
-  postCaption: {
+  message: {
     type: String,
     required: true,
   },
-  postLikes: {
+
+  Likes: {
     likes: {
       type: Number,
       default: 0,
@@ -16,17 +17,17 @@ const postSchema = new mongoose.Schema({
       type: [
         {
           name: { type: String },
-          liketype: {
-            type: String,
-            default: 'heart',
-            enum: ['heart', 'thumbs', 'osm', 'dislike'],
-          },
+          date: { default: Date.now(), type: Date },
         },
       ],
       default: undefined,
     },
   },
-  postComments: {
+  password: {
+    type: String,
+    required: true,
+  },
+  Comments: {
     noOfcomments: 0,
     Comments: {
       type: [

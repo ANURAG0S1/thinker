@@ -8,11 +8,7 @@ const likeSchema = new mongoose.Schema({
   likers: [
     {
       name: { type: String, required: true },
-      liketype: {
-        type: String,
-        default: 'heart',
-        enum: ['heart', 'thumbs', 'osm', 'dislike'],
-      },
+      date: Date.now(),
     },
   ],
 });

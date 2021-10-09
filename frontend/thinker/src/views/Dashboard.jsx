@@ -2,16 +2,6 @@ import React from 'react'
 import './../css/dashboard.css'
 import video from './../assets/vid/dashboard.mp4'
 import fimg from './../assets/img/idea-1.jpeg'
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-} from "react-router-dom";
-import Signup from './Signup';
-import Login from './Login';
-import Homefeed from './Homefeed'
-
 
 function Dashboard() {
     return (
@@ -46,10 +36,10 @@ function Dashboard() {
 
 
             <section style={{ padding: "20px 40px" }}>
-                <h1 className="center s40  w100 simple-heading ">
+                <h1 className="center s40 mt40 w100 simple-heading ">
                     What we do ?
                 </h1>
-                <div className="w100 mt40">
+                <div className="w100 mt40 h80">
                     <div className="dfr ">
                         <div>
                             <img className="r20 p40" src={fimg} alt="idea" />
@@ -69,8 +59,8 @@ function Dashboard() {
                         </div>
                     </div>
                 </div>
-                <div className="w100 mt40">
-                    <div className="dfr ">
+                <div className="w100 mt40 h80">
+                    <div className="dfr mt40">
 
                         <div style={{ paddingTop: "20px" }}>
                             <h3>

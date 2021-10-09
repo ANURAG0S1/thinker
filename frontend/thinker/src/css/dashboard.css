@@ -3,6 +3,7 @@
   padding: 0;
   color: white;
   box-sizing: border-box;
+  font-family: poppins;
 }
 .font-heading {
   font-family: monospace, 'Helvetica Neue', sans-serif;
@@ -22,6 +23,11 @@
   padding: 0px 100px;
   align-items: center;
   height: 100px;
+}
+.h80 {
+  height: 80vh;
+  align-items: center;
+  display: flex;
 }
 .w100 {
   width: 100%;

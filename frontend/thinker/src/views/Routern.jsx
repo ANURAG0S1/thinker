@@ -10,9 +10,9 @@ import {
 import Dashboard from './Dashboard';
 import Homefeed from './Homefeed'
 import How from './How';
-import Signup from './Signup';
 
-function Routerx() {
+
+function Routern() {
     return (
         <>
             <Router>
@@ -32,11 +32,10 @@ function Routerx() {
                             </Link>
                         </div>
                         <div id="how">
-                            <Link to="/signup">
-                                signup
+                            <Link to="/how">
+                                How it works
                             </Link>
                         </div>
-
 
                     </div>
 
@@ -49,24 +48,26 @@ function Routerx() {
                         <Dashboard />
                     </Route>
 
-                    <Route path="/feed">
+                    <Route path="/home">
                         <Homefeed />
                     </Route>
 
-
-                    <Route path="/signup">
-                        <Signup />
+                    <Route path="/about">
+                        <Homefeed />
+                    </Route>
+                    <Route path="/how">
+                        <How />
                     </Route>
                 </Switch>
 
             </Router><div>
                 <p>
 
-
+                    common in asll
                 </p>
             </div>
         </>
     )
 }
 
-export default Routerx;
+export default Routern;

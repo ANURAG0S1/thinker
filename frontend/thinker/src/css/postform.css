@@ -1,0 +1,26 @@
+.postform-hover {
+  position: absolute;
+
+  font-size: 13px;
+  font-weight: 400px;
+  font-weight: 400;
+  display: none;
+  padding: 4px 6px;
+  border-radius: 5px;
+  background-color: white;
+  color: rgb(4, 4, 65);
+
+  left: 0;
+  border: 1px solid #000;
+}
+.postform-btn:hover ~ .postform-hover {
+  display: block;
+  left: -130px;
+}
+.postform-modal {
+  position: absolute;
+  padding: 10px 20px;
+  left: -140px;
+  border: 1px solid white;
+  top: -300px;
+}

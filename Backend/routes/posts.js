@@ -1,10 +1,26 @@
 const express = require('express');
 const route = express.Router();
 const post = require('./../Models/post');
+const user = require('./../Models/user');
 
 route.use(express.json());
 
-route.post('/post', async (req, res) => {
+const validuser = async function (req, res, next) {
+  const result = await user.findOne({
+    username: req.body.username,
+    password: req.body.password,
+  });
+  console.log('middleware initiated');
+  if (!result) {
+    console.log('middleware faileds');
+    res.end();
+  } else {
+    console.log('middleware passed');
+    next();
+  }
+};
+route.use('/newpost', validuser);
+route.post('/newpost', async (req, res) => {
   try {
     var requestContent = req.body;
     var result = new post(requestContent);
@@ -28,6 +44,6 @@ route.get('/delall/', async (req, res) => {
 });
 route.get('/all', async (req, res) => {
   const result = await post.find();
-  res.json(result);
+  res.send(result);
 });
 module.exports = route;
