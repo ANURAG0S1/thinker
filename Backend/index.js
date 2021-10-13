@@ -2,6 +2,7 @@ var express = require('express');
 const mongoose = require('mongoose');
 const app = new express();
 var bodyParser = require('body-parser');
+require('dotenv').config();
 app.use(bodyParser.urlencoded({ extended: true }));
 const cors = require('cors');
 const user = require('./Models/user');
@@ -12,13 +13,10 @@ app.use(cors());
 
 // db connection
 mongoose
-  .connect(
-    'mongodb+srv://anurag:0213@cluster0.powe3.mongodb.net/thinker?retryWrites=true&w=majority',
-    {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    }
-  )
+  .connect(process.env.DB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
   .then(() => console.log('Database connected!'))
   .catch((err) => console.log(err));
 
