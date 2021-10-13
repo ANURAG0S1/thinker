@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import axios from 'axios'
 import Postform from '../components/Postform';
 import Post from '../components/Post';
+import loading from './../assets/img/loading.gif'
+
 
 function Homefeed() {
     const [data, setdata] = useState([]);
@@ -20,7 +22,7 @@ function Homefeed() {
     }, []);
     return (
         <div>
-            <Postform />
+            <Postform refreshHandler={getdata} />
             <div style={{
                 display: "flex",
                 flexDirection: "row",
@@ -31,7 +33,11 @@ function Homefeed() {
                     ? data.map((e, i) => {
                         return <Post data={e} key={i}></Post>;
                     })
-                    : ''}
+                    : <div style={{
+                        height: "60vh", width: "100%", display: "flex",
+                        justifyContent: "center", alignItems: "center"
+                    }}> <img src={loading} height="100" width="100" alt="" />
+                    </div>}
             </div>
         </div>
     )

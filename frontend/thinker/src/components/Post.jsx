@@ -2,9 +2,11 @@ import React from 'react';
 import './../css/post.css';
 
 function Post({ data }) {
-  const { username, message, date } = data;
-  const like = () => {
-    console.log('logging this via click');
+  const { username, message, date, _id } = data;
+  const like = (e) => {
+    console.log(e.target.id);
+    console.log(localStorage.getItem("username"))
+
   };
   return (
     <>
@@ -21,6 +23,10 @@ function Post({ data }) {
           <p style={{ fontSize: '12px' }}>{date.slice(11, 16) + " " + date.slice(0, 10)}</p>
         </div>
         <p>{message}</p>
+
+        <p>
+          this is the id : {_id}
+        </p>
         <div
           className='post-action-bar'
           style={{
@@ -30,11 +36,9 @@ function Post({ data }) {
             marginTop: '12px',
           }}
         >
-          <div className='like'>like</div>
-          <div className='unlike' onClick={() => like()}>
-            unlike
-          </div>
-          <div className='comments'>comments</div>
+          <div className='like' onClick={like} id={_id}>like</div>
+
+          <div className='comments'>comments</div> <div className='share'>share</div>
         </div>
       </div>
     </>

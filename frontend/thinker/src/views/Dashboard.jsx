@@ -1,6 +1,5 @@
 import React from 'react'
 import './../css/dashboard.css'
-import video from './../assets/vid/dashboard.mp4'
 import fimg from './../assets/img/idea-1.jpeg'
 
 function Dashboard() {
@@ -26,10 +25,10 @@ function Dashboard() {
                 </div>
                 <div style={{ width: "60vw", position: 'absolute', bottom: '0', }}>
 
-                    <video className='main-vid' style={{
+                    {/* <video className='main-vid' style={{
                         width: "100%", bottom: "-40px",
                         transform: " scale(1) translateY(30%)"
-                    }} loop autoplay="true" muted src={video} type="video/mp4">  </video>
+                    }} loop autoplay="true" muted src={video} type="video/mp4">  </video> */}
 
                 </div>
             </section>

@@ -13,7 +13,7 @@ app.use(cors());
 // db connection
 mongoose
   .connect(
-    'mongodb+srv://anurag:0213@cluster0.powe3.mongodb.net/instagram?retryWrites=true&w=majority',
+    'mongodb+srv://anurag:0213@cluster0.powe3.mongodb.net/thinker?retryWrites=true&w=majority',
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,

@@ -1,5 +1,16 @@
 .App {
   min-height: 100vh;
   max-height: 100%;
-  background: radial-gradient(blue 0.2%, black);
+  text-decoration: none;
+  background: radial-gradient(white 0.2%, rgba(230, 229, 229, 0.898));
+}
+a {
+  text-decoration: none;
+  padding: 2px 3px;
+}
+a:hover {
+  background-color: black;
+  color: white;
+
+  border-radius: 4px;
 }

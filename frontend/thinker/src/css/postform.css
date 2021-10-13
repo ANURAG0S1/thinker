@@ -6,9 +6,9 @@
   font-weight: 400;
   display: none;
   padding: 4px 6px;
-  border-radius: 5px;
-  background-color: white;
-  color: rgb(4, 4, 65);
+  border-radius: 4px;
+  background-color: rgb(0, 0, 0);
+  color: rgb(243, 243, 243);
 
   left: 0;
   border: 1px solid #000;
@@ -23,4 +23,7 @@
   left: -140px;
   border: 1px solid white;
   top: -300px;
+}
+.postform-modal label {
+  color: white;
 }

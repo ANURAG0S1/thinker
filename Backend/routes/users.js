@@ -1,8 +1,9 @@
 const express = require('express');
 const route = express.Router();
 const user = require('./../Models/user');
-
 route.use(express.json());
+
+let status = '';
 
 const existingUser = async (req, res, next) => {
   const result = await user.findOne({
@@ -10,27 +11,35 @@ const existingUser = async (req, res, next) => {
   });
   console.log('middleware initiated');
   if (!result) {
-    console.log('username available');
-    res.send({ message: 'username available', status: 'success' });
+    console.log('user created successfully');
+    status = true;
     next();
   } else {
     console.log('username unavailable');
-    res.send({ message: 'username unavailable', status: 'failed' }).end();
+    status = false;
+    next();
   }
 };
 
 route.use(existingUser);
 route.post('/', async (req, res) => {
-  try {
-    var requestContent = req.body;
-    var result = new user(requestContent);
-    var resu = await result.save(function (err, success) {
-      if (err) return console.error(err);
-      console.log(success);
-    });
-    res.json({ data: result });
-  } catch (error) {
-    res.send(error.message);
+  const passed = { message: 'user created successfully', status: true };
+  const failed = { message: 'username unavailable', status: false };
+
+  if (status) {
+    try {
+      var requestContent = req.body;
+      var result = new user(requestContent);
+      var resu = await result.save(function (err, success) {
+        if (err) return console.error(err);
+        console.log(success);
+      });
+      res.send(passed);
+    } catch (error) {
+      res.send(error.message);
+    }
+  } else {
+    res.send(failed);
   }
 });
 

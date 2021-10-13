@@ -1,4 +1,4 @@
-import React from 'react'
+import { useState } from 'react'
 import './../css/dashboard.css'
 import {
     BrowserRouter as Router,
@@ -9,60 +9,79 @@ import {
 
 import Dashboard from './Dashboard';
 import Homefeed from './Homefeed'
-import How from './How';
-import Signup from './Signup';
+import Register from './Signup';
+
+
 
 function Routerx() {
-    return (
-        <>
-            <Router>
-                <div className="nav dfr">
+    const [isMobile, setisMobile] = useState(true);
+    const hidemenu = () => {
+        setisMobile(false)
+    }
+    let u = localStorage.getItem("username")
 
+    console.log("us is ", u)
+
+
+    return (
+        <><div className="m-menu-btn" style={{
+            position: "fixed",
+            height: "auto",
+            display: "flex",
+            color: "white",
+            zIndex: 10,
+            backgroundColor: "black",
+            borderBottomLeftRadius: "10px",
+            padding: "4px 6px",
+            width: "70px",
+            right: "0",
+            top: "0"
+        }} onClick={() => {
+            setisMobile(!isMobile);
+        }}> {isMobile ? "close" : "menu"} </div>
+            <Router>
+                <div className="nav dfr"  >
                     <div className="font-heading s40">
                         Thinker
                     </div>
-                    <div className="menu w40">
-                        <div className="Home">
-                            <Link to="/feed">
-                                home</Link>
-                        </div>
-                        <div className="about">
-                            <Link to="/about">
-                                about
-                            </Link>
-                        </div>
-                        <div id="how">
-                            <Link to="/signup">
-                                signup
-                            </Link>
-                        </div>
+                    {
+                        isMobile ?
+                            <div className="menu w40">
 
-
-                    </div>
-
-
+                                <div className="Home">
+                                    <Link to="/" onClick={hidemenu}>
+                                        Home</Link>
+                                </div>
+                                <div className="about" >
+                                    <Link to="/about" onClick={hidemenu}>
+                                        About
+                                    </Link>
+                                </div>
+                                {u ? "" : <div id="how">
+                                    <Link to="/signup" onClick={hidemenu}>
+                                        Signup
+                                    </Link>
+                                </div>}
+                            </div>
+                            : ""}
                 </div>
-
-
                 <Switch>
                     <Route path="/dashboard">
-                        <Dashboard />
+
+                        {u ? <Dashboard menubtn={setisMobile} /> : "please sign ip first"}
                     </Route>
 
-                    <Route path="/feed">
-                        <Homefeed />
+                    <Route path="/" exact>
+                        {u ?
+                            <Homefeed /> : <Dashboard menubtn={setisMobile} />}
                     </Route>
-
-
                     <Route path="/signup">
-                        <Signup />
+                        <Register />
                     </Route>
                 </Switch>
 
             </Router><div>
                 <p>
-
-
                 </p>
             </div>
         </>
